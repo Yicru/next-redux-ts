@@ -3,8 +3,6 @@ import * as React from "react";
 import { MovieProps, MovieState } from "./Movie.type";
 import movieApi from "utils/movieApi";
 
-import css from "./Movie.scss";
-
 class Movie extends React.Component<MovieProps, MovieState> {
   state: MovieState = {};
 
@@ -34,7 +32,7 @@ class Movie extends React.Component<MovieProps, MovieState> {
 
     if (title) {
       return (
-        <div className={css.movie}>
+        <div>
           <img
             src={poster_path && process.env.TMDB_IMAGE_URL + poster_path}
             alt="poster"
@@ -44,6 +42,23 @@ class Movie extends React.Component<MovieProps, MovieState> {
           <p>Budget: {budget}</p>
           <p>Runtime: {runtime}</p>
           <p>Overview: {overview}</p>
+          <style jsx>{`
+            div {
+              background-color: lemonchiffon;
+            }
+            img {
+              width: 400px;
+              border: 3px solid purple;
+            }
+            h3 {
+              font-size: 24px;
+              color: lightseagreen;
+            }
+            p {
+              font-size: 18px;
+              color: saddlebrown;
+            }
+          `}</style>
         </div>
       );
     }
