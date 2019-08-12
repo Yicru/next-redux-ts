@@ -5,6 +5,7 @@ import withRedux from "next-redux-wrapper";
 import withReduxSaga from "next-redux-saga";
 
 import createStore from "../store/store";
+import "styles/index.sass";
 
 interface MyAppProps {
   store: ReturnType<typeof createStore>;
