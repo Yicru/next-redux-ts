@@ -1,8 +1,7 @@
 require("dotenv").config();
-const withCSS = require("@zeit/next-css");
 const withSass = require("@zeit/next-sass");
-const webpack = require("webpack");
 const TsConfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = withSass({
   cssModules: true,
@@ -20,15 +19,8 @@ module.exports = withSass({
       config.resolve.plugins = [new TsConfigPathsPlugin()];
     }
 
+    config.plugins.push(new Dotenv());
+
     return config;
-  },
-  env: {
-    /*
-      You need to define environment variables in .env file,
-      and in order to make them work in your code you have to
-      define them here as well like this (next.js's convenience :) )
-    */
-    TMDB_MOVIE_KEY: process.env.TMDB_MOVIE_KEY,
-    TMDB_IMAGE_URL: process.env.TMDB_IMAGE_URL
   }
 });
