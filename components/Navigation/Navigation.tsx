@@ -1,5 +1,5 @@
-import * as React from 'react'
-import Link from 'next/link'
+import * as React from "react";
+import Link from "next/link";
 
 const Navigation = () => {
   return (
@@ -11,7 +11,7 @@ const Navigation = () => {
         <a>Now Playing</a>
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

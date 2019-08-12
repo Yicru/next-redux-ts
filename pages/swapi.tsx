@@ -1,8 +1,8 @@
-import * as React from 'react'
-import { NextPage } from 'next'
+import * as React from "react";
+import { NextPage } from "next";
 
-import Navigation from '../components/Navigation'
-import Ticker from '../components/Ticker'
+import Navigation from "../components/Navigation";
+import Ticker from "../components/Ticker";
 
 const Swapi: NextPage = () => {
   return (
@@ -13,7 +13,7 @@ const Swapi: NextPage = () => {
         <Ticker />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Swapi
+export default Swapi;

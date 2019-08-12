@@ -1,28 +1,28 @@
-import * as React from 'react'
+import * as React from "react";
 
-import { MovieProps, MovieState } from './Movie.type'
-import movieApi from 'utils/movieApi'
+import { MovieProps, MovieState } from "./Movie.type";
+import movieApi from "utils/movieApi";
 
-import css from './Movie.scss'
+import css from "./Movie.scss";
 
 class Movie extends React.Component<MovieProps, MovieState> {
-  state: MovieState = {}
+  state: MovieState = {};
 
-  componentDidMount () {
-    this.fetchMovie()
+  componentDidMount() {
+    this.fetchMovie();
   }
 
   fetchMovie = async () => {
-    const { id } = this.props
+    const { id } = this.props;
     const response = await movieApi.get(
       `/movie/${id}?api_key=${process.env.TMDB_MOVIE_KEY}&language=en-US`
-    )
-    const movie = response.data
+    );
+    const movie = response.data;
 
-    this.setState({ ...movie })
-  }
+    this.setState({ ...movie });
+  };
 
-  render () {
+  render() {
     const {
       poster_path,
       title,
@@ -30,7 +30,7 @@ class Movie extends React.Component<MovieProps, MovieState> {
       budget,
       runtime,
       overview
-    } = this.state
+    } = this.state;
 
     if (title) {
       return (
@@ -45,10 +45,10 @@ class Movie extends React.Component<MovieProps, MovieState> {
           <p>Runtime: {runtime}</p>
           <p>Overview: {overview}</p>
         </div>
-      )
+      );
     }
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 }
 
-export default Movie
+export default Movie;

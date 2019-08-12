@@ -1,5 +1,5 @@
-import { MovieProps } from '../Movie/Movie.type'
+import { MovieProps } from "../Movie/Movie.type";
 
 export interface NowPlayingState {
-  movies: MovieProps[]
+  movies: MovieProps[];
 }

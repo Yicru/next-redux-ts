@@ -1,43 +1,43 @@
-import * as React from 'react'
+import * as React from "react";
 
-import { NowPlayingState } from './NowPlaying.type'
-import movieApi from '../../utils/movieApi'
-import Link from 'next/link'
+import { NowPlayingState } from "./NowPlaying.type";
+import movieApi from "../../utils/movieApi";
+import Link from "next/link";
 
 class NowPlaying extends React.Component<{}, NowPlayingState> {
   state: NowPlayingState = {
     movies: []
-  }
+  };
 
-  componentDidMount () {
-    this.fetchNowPlaying()
+  componentDidMount() {
+    this.fetchNowPlaying();
   }
 
   fetchNowPlaying = async () => {
     const response = await movieApi.get(
       `/movie/now_playing?api_key=${process.env.TMDB_MOVIE_KEY}&language=en-US&page=1`
-    )
+    );
 
-    const movies = response.data.results
+    const movies = response.data.results;
 
-    this.setState({ movies })
-  }
+    this.setState({ movies });
+  };
 
-  render () {
+  render() {
     const movieList = this.state.movies.map(movie => (
       <li key={movie.id}>
         <Link href={`/movie/${movie.id}`}>
           <a>{movie.title}</a>
         </Link>
       </li>
-    ))
+    ));
 
     return (
       <div>
         <ul>{movieList}</ul>
       </div>
-    )
+    );
   }
 }
 
-export default NowPlaying
+export default NowPlaying;

@@ -1,8 +1,8 @@
-import * as React from 'react'
-import { NextPage } from 'next'
+import * as React from "react";
+import { NextPage } from "next";
 
-import Navigation from '../components/Navigation'
-import Ticker from '../components/Ticker'
+import Navigation from "../components/Navigation";
+import Ticker from "../components/Ticker";
 
 const Index: NextPage = () => {
   return (
@@ -11,7 +11,7 @@ const Index: NextPage = () => {
       <h1>HOME</h1>
       <Ticker />
     </div>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;
