@@ -33,7 +33,7 @@ class NowPlaying extends React.Component<{}, NowPlayingState> {
     ));
 
     return (
-      <div>
+      <div className="content">
         <ul>{movieList}</ul>
       </div>
     );
